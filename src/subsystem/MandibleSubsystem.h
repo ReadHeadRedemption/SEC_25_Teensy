@@ -4,24 +4,25 @@
 #include <Arduino.h>
 #include "../handler/ServoHandler.h"
 
+int openAngle = 100;
+int closeAngle = 0;
+
 class MandibleSubsystem
 {
 public:
     MandibleSubsystem(int indexLeft, int indexRight, ServoHandler &servos);
     void Begin();
     // void Update();
-    void OpenLeft();
-    void CloseLeft();
-    void OpenRight();
-    void CloseRight();
+    void Open();
+    void Close();
     void SetState();
 
     enum Positions : uint8_t
     {
-        LEFT_OPEN = 180,
-        LEFT_CLOSE = 120,
-        RIGHT_OPEN = 0,
-        RIGHT_CLOSE = 60
+        LEFT_OPEN = openAngle,
+        LEFT_CLOSE = closeAngle,
+        RIGHT_OPEN = openAngle,
+        RIGHT_CLOSE = closeAngle
     };
 
 private:

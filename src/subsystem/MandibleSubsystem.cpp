@@ -11,22 +11,15 @@ void MandibleSubsystem::Begin()
     CloseRight();
 }
 
-void MandibleSubsystem::OpenLeft()
+void MandibleSubsystem::Open()
 {
     servos.WriteServoAngle(indexLeft, MandibleSubsystem::Positions::LEFT_OPEN);
-}
-
-void MandibleSubsystem::OpenRight()
-{
     servos.WriteServoAngle(indexRight, MandibleSubsystem::Positions::RIGHT_OPEN);
 }
 
-void MandibleSubsystem::CloseLeft()
+
+void MandibleSubsystem::Close()
 {
     servos.WriteServoAngle(indexLeft, MandibleSubsystem::Positions::LEFT_CLOSE);
-}
-
-void MandibleSubsystem::CloseRight()
-{
     servos.WriteServoAngle(indexRight, MandibleSubsystem::Positions::RIGHT_CLOSE);
 }
